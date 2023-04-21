@@ -53,7 +53,7 @@ const Layout = async ({ children }: LayoutProps) => {
 				>
 					<Icons.Logo className='h-8 w-auto text-indigo-500' />
 				</Link>
-				//maybe wrap to container component
+
 				{friends.length > 0 ? (
 					<div className='text-xs front-semibold leading-6 text-gray-400'>
 						Your Chats
