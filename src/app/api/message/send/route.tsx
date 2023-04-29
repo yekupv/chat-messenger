@@ -45,7 +45,7 @@ export async function POST(req: Request) {
 			timestamp,
 		};
 		const message = messageValidator.parse(messageData);
-		console.log(message);
+
 		//notify all connected chat room clients
 		pusherServer.trigger(
 			toPusherKey(`chat:${chatId}`),

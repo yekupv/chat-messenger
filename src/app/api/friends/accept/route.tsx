@@ -43,8 +43,6 @@ export async function POST(req: Request) {
 
 		const user = JSON.parse(userRaw);
 		const friend = JSON.parse(friendRaw);
-		console.log(user);
-		console.log(friend);
 
 		// notify added user
 		await Promise.all([
