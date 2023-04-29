@@ -4,12 +4,14 @@ import TextareaAutosize from "react-textarea-autosize";
 import Button from "./ui/Button";
 import axios from "axios";
 import { toast } from "react-hot-toast";
+import { useRouter } from "next/navigation";
 interface ChatInputProps {
 	chatPartner: User;
 	chatId: string;
 }
 
 const ChatInput: FC<ChatInputProps> = ({ chatPartner, chatId }) => {
+	const router = useRouter();
 	const [input, setInput] = useState<string>("");
 	const textareaRef = useRef<HTMLTextAreaElement | null>(null);
 	const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -25,6 +27,7 @@ const ChatInput: FC<ChatInputProps> = ({ chatPartner, chatId }) => {
 			toast.error("Something went wrong. Please try again later.");
 		} finally {
 			setIsLoading(false);
+			router.refresh();
 		}
 	};
 	return (

@@ -7,10 +7,12 @@ import axios, { AxiosError } from "axios";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useRouter } from "next/navigation";
 interface AddFriendButtonProps {}
 type FormData = z.infer<typeof addFriendValidator>;
 
 const AddFriendButton: FC<AddFriendButtonProps> = ({}) => {
+	const router = useRouter();
 	const [showSuccessState, setShowSuccessState] = useState<boolean>(false);
 	const {
 		register,
@@ -41,6 +43,7 @@ const AddFriendButton: FC<AddFriendButtonProps> = ({}) => {
 
 	const onSubmit = (data: FormData) => {
 		addFriend(data.email);
+		router.refresh();
 	};
 	return (
 		<>
