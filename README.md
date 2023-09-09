@@ -11,7 +11,7 @@
 ## Features ⚙️
 
 
-- #### Realtime messaging
+- #### Realtime messaging, friend requests and notifications using pusher web sockets 
 
 - #### Adding friends and sending friend requests via email
 
